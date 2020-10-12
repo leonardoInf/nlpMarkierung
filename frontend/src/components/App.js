@@ -22,7 +22,9 @@ export default class App extends React.Component {
           <BrowserRouter>
             <Menu>
               <Menu.Item>
-                <a href="https://braguinski.de" style={{color: "black"}}>Startseite</a>
+                <a href="https://braguinski.de" style={{ color: "black" }}>
+                  Startseite
+                </a>
               </Menu.Item>
               <Menu.Item as={Link} to="/" onClick={this.restoreBackground}>
                 App

@@ -12,9 +12,7 @@ import "./styles/Start.css";
 export default function Start() {
   return (
     <div>
-      <h1 className="titel">
-        Automatische Markierung von Texten
-      </h1>
+      <h1 className="titel">Automatische Markierung von Texten</h1>
       <Segment>
         <Grid columns={2} relaxed="very" verticalAlign="middle">
           <Grid.Column>

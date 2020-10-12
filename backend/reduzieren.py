@@ -101,4 +101,3 @@ if __name__ == "__main__":
         print('python reduzieren.py "<text>"')
         exit(0)
     print(reduzieren(sys.argv[1]))
-    markieren(sys.argv[1], reduzieren(sys.argv[1]))

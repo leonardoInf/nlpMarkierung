@@ -23,11 +23,11 @@ export default class App extends React.Component {
             <Menu>
               <Menu.Item>
                 <a href="https://braguinski.de" style={{ color: "black" }}>
-                  Startseite
+                  braguinski.de
                 </a>
               </Menu.Item>
               <Menu.Item as={Link} to="/" onClick={this.restoreBackground}>
-                App
+                Textmarker
               </Menu.Item>
               <Menu.Item
                 as={Link}

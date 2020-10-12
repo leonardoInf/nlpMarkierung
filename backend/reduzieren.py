@@ -9,6 +9,8 @@ import itertools
 import sys
 from termcolor import colored
 
+nlp = load("de_core_news_sm")
+
 
 def flatten(x):
     return list(itertools.chain.from_iterable(x))
@@ -29,7 +31,7 @@ def markieren(text, indizes):
 
 
 def reduzieren(text):
-    sätze = load("de_core_news_sm")(satzzeichen_ersetzen(text)).sents
+    sätze = nlp(satzzeichen_ersetzen(text)).sents
     return flatten([satz_reduzieren(satz, i)
                     for i, satz in enumerate(sätze)])
 

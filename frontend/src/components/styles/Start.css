@@ -1,14 +1,18 @@
-.AppInput {
-  font-size: 16px !important;
-  height: 88vh;
-  border: 2px solid gray !important;
-}
-
-.AppInput::placeholder {
-  color: black !important;
-}
-
 .titel {
   text-align: center;
   color: white;
+}
+
+.AppTextbox {
+  font-size: 16px !important;
+  height: 87vh;
+  border: 2px solid gray !important;
+}
+
+.AppTextbox::placeholder {
+  color: black !important;
+}
+
+#textOutput {
+  padding: 1rem;
 }

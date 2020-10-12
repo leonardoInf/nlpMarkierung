@@ -1,0 +1,14 @@
+.AppInput {
+  font-size: 16px !important;
+  height: 88vh;
+  border: 2px solid gray !important;
+}
+
+.AppInput::placeholder {
+  color: black !important;
+}
+
+.titel {
+  text-align: center;
+  color: white;
+}

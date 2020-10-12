@@ -7,10 +7,33 @@ import GrayBackground from "../assets/background.jpg";
 import "./styles/App.css";
 
 export default class App extends React.Component {
-  state = { background: `url(${GrayBackground})` };
+  state = {
+    background: `url(${GrayBackground})`,
+    currentScreen: "hervorhebung",
+  };
   restoreBackground = () =>
-    this.setState({ background: `url(${GrayBackground})` });
-  clearBackground = () => this.setState({ background: "none" });
+    this.setState({
+      background: `url(${GrayBackground})`,
+      currentScreen: "hervorhebung",
+    });
+  clearBackground = () =>
+    this.setState({ background: "none", currentScreen: "impressum" });
+
+  myMenuItem = () => {
+    if (this.state.currentScreen === "hervorhebung") {
+      return (
+        <Menu.Item as={Link} to="/impressum" onClick={this.clearBackground}>
+          Impressum
+        </Menu.Item>
+      );
+    } else {
+      return (
+        <Menu.Item as={Link} to="/" onClick={this.restoreBackground}>
+          Hervorhebung
+        </Menu.Item>
+      );
+    }
+  };
 
   render() {
     return (
@@ -26,16 +49,7 @@ export default class App extends React.Component {
                   braguinski.de
                 </a>
               </Menu.Item>
-              <Menu.Item as={Link} to="/" onClick={this.restoreBackground}>
-                Textmarker
-              </Menu.Item>
-              <Menu.Item
-                as={Link}
-                to="/impressum"
-                onClick={this.clearBackground}
-              >
-                Impressum
-              </Menu.Item>
+              {this.myMenuItem()}
             </Menu>
             <Switch>
               <Route exact path="/">

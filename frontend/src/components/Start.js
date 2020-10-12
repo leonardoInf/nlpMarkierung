@@ -56,7 +56,7 @@ export default class Start extends React.Component {
       return words.map((w, i) => {
         const word = `${w} `;
         if (this.indices.includes(i)) {
-          return <mark key={`marked-word-${i}`}>{word}</mark>;
+          return <strong key={`marked-word-${i}`}>{word}</strong>;
         } else {
           return <span key={`non-marked-word-${i}`}>{word}</span>;
         }
@@ -67,7 +67,7 @@ export default class Start extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="titel">Automatische Markierung von Texten</h1>
+        <h1 className="titel">Automatische Hervorhebung von Texten</h1>
         <Segment>
           {this.loadingMessage()}
           <Grid columns={2} relaxed="very" verticalAlign="middle" stackable>
@@ -84,7 +84,7 @@ export default class Start extends React.Component {
               <Form>
                 <div
                   readOnly
-                  placeholder="Hier wird der markierte Text erscheinen"
+                  placeholder="Hier wird der Text mit Hervorhebungen erscheinen"
                   className="AppTextbox"
                   value={this.state.outputText}
                 >

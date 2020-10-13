@@ -7,7 +7,6 @@ Und ja, Meschen sind hierin besser als mein Algorithmus..
 from spacy import displacy, load
 import itertools
 import sys
-from termcolor import colored
 
 nlp = load("de_core_news_sm")
 

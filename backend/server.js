@@ -1,12 +1,13 @@
 const app = require("express")();
 const { spawn } = require("child_process");
+const serveStatic = require('serve-static')
 
 app.use(require("body-parser").json());
 app.use(require("cors")());
 
 app.post("/", (req, res) => {
   const noNewlines = req.body.text.replace(/\s/g, " ");
-  const cmd = spawn("python", ["reduzieren.py", `"${noNewlines}"`], {
+  const cmd = spawn("python3", ["reduzieren.py", `"${noNewlines}"`], {
     shell: true,
   });
   cmd.stdout.on("data", (data) => {
@@ -20,6 +21,8 @@ app.post("/", (req, res) => {
     }
   });
 });
+
+app.use(serveStatic('../frontend/build'));
 
 app.listen(process.env.PORT, () => {
   console.log(`Server wurde gestartet auf Port ${process.env.PORT}.`);

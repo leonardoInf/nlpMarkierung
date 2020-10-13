@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://192.168.1.13:8080",
+  baseURL: process.env.REACT_APP_HOSTNAME,
   timeout: 5000,
 });

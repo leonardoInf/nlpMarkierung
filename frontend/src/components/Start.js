@@ -64,10 +64,21 @@ export default class Start extends React.Component {
     }
   };
 
+  divider = () => {
+    console.log(document.documentElement.clientWidth);
+    if (document.documentElement.clientWidth > 500) {
+      return (
+        <Divider vertical>
+          <Icon name="arrow circle right"></Icon>
+        </Divider>
+      );
+    }
+  };
+
   render() {
     return (
       <div>
-        <h1 className="titel">Automatische Hervorhebung von Texten</h1>
+        <h1 className="titel">Automatische Hervorhebung von Wörtern</h1>
         <Segment>
           {this.loadingMessage()}
           <Grid columns={2} relaxed="very" verticalAlign="middle" stackable>
@@ -93,9 +104,7 @@ export default class Start extends React.Component {
               </Form>
             </Grid.Column>
           </Grid>
-          <Divider vertical>
-            <Icon name="arrow circle right"></Icon>
-          </Divider>
+          {this.divider()}
         </Segment>
       </div>
     );

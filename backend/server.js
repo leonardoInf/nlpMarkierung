@@ -5,12 +5,8 @@ app.use(require("body-parser").json());
 app.use(require("cors")());
 
 app.post("/", (req, res) => {
-  // TODO: Fix this lmao
-  let noNewlines =  req.body.text.replace("\n", " ");
-  const arg = `"${noNewlines}"`;
-  console.log(noNewlines);
-
-  const cmd = spawn("python", ["reduzieren.py", arg], {
+  const noNewlines = req.body.text.replace(/\s/g, " ");
+  const cmd = spawn("python", ["reduzieren.py", `"${noNewlines}"`], {
     shell: true,
   });
   cmd.stdout.on("data", (data) => {

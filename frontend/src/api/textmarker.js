@@ -2,5 +2,5 @@ import axios from "axios";
 
 export default axios.create({
   baseURL: process.env.REACT_APP_HOSTNAME,
-  timeout: 5000,
+  timeout: 10000,
 });

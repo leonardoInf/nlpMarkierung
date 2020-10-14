@@ -23,7 +23,7 @@ app.post("/", (req, res) => {
   });
 });
 
-app.use(serveStatic('../frontend/build'));
+app.use(serveStatic('/home/noroot/frontend/build'));
 
 app.listen(process.env.PORT, () => {
   console.log(`Server wurde gestartet auf Port ${process.env.PORT}.`);

@@ -28,7 +28,7 @@ export default class Start extends React.Component {
   sendText = async () => {
     this.setState({ loading: true });
     const res = await textmarker.post("/", {
-      text: this.state.inputText,
+      text: this.state.inputText.substring(0, 5000),
     });
     this.outputNeedsUpdate = true;
     this.indices = res.data;
@@ -51,7 +51,7 @@ export default class Start extends React.Component {
 
   markedText = () => {
     if (this.outputNeedsUpdate) {
-      const words = this.state.inputText.split(" ");
+      const words = this.state.inputText.substring(0, 5000).split(" ");
       this.outputNeedsUpdate = false;
       return words.map((w, i) => {
         const word = `${w} `;
@@ -65,7 +65,6 @@ export default class Start extends React.Component {
   };
 
   divider = () => {
-    console.log(document.documentElement.clientWidth);
     if (document.documentElement.clientWidth > 500) {
       return (
         <Divider vertical>
@@ -78,7 +77,7 @@ export default class Start extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="titel">Automatische Hervorhebung von Wörtern</h1>
+        <h1 className="titel">Automatische Hervorhebung von Wörtern (max. 5000 Zeichen)</h1>
         <Segment>
           {this.loadingMessage()}
           <Grid columns={2} relaxed="very" verticalAlign="middle" stackable>

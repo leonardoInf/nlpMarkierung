@@ -27,7 +27,7 @@ export default class Start extends React.Component {
 
   sendText = async () => {
     this.setState({ loading: true });
-    const res = await textmarker.post("/text", {
+    const res = await textmarker.post("/text/", {
       text: this.state.inputText.substring(0, 5000),
     });
     this.outputNeedsUpdate = true;

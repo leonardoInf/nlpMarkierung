@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: process.env.REACT_APP_HOSTNAME,
+  baseURL: "https://braguinski.de",
   timeout: 10000,
 });

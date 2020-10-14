@@ -42,7 +42,7 @@ export default class App extends React.Component {
         style={{ backgroundImage: this.state.background }}
       >
         <Container style={{ width: "70%" }}>
-          <BrowserRouter>
+          <BrowserRouter basename={"/text"}>
             <Menu>
               <Menu.Item>
                 <a href="https://braguinski.de" style={{ color: "black" }}>

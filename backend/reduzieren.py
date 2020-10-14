@@ -23,12 +23,6 @@ def satzzeichen_ersetzen(text):
     return text.replace(",", ".").replace(":", ".").replace(";", ".")
 
 
-def markieren(text, indizes):
-    wörter = text.split()
-    for i in range(len(wörter)):
-        print(colored(wörter[i], "red" if i in indizes else "white"), end=" ")
-
-
 def reduzieren(text):
     sätze = nlp(satzzeichen_ersetzen(text)).sents
     return flatten([satz_reduzieren(satz, i)

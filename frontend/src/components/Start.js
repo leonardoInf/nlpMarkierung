@@ -77,14 +77,14 @@ export default class Start extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="titel">Automatische Hervorhebung von Wörtern (max. 5000 Zeichen)</h1>
+        <h1 className="titel">Automatische Hervorhebung von Wörtern</h1>
         <Segment>
           {this.loadingMessage()}
           <Grid columns={2} relaxed="very" verticalAlign="middle" stackable>
             <Grid.Column>
               <Form>
                 <TextArea
-                  placeholder="Geben Sie hier einen Text ein"
+                  placeholder="Geben Sie hier einen Text ein (max. 5000 Zeichen)"
                   className="AppTextbox"
                   onChange={this.onTextAreaChange}
                 ></TextArea>

@@ -1,3 +1,3 @@
 # nlpMarkierung
 
-Automatische Markierung von deutschen Texten
+Automatische Hervorhebung von Wörtern in deutschen Texten.

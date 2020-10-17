@@ -20,7 +20,7 @@ def ist_nomen(wort):
 
 
 def satzzeichen_ersetzen(text):
-    return text.replace(",", ".").replace(":", ".").replace(";", ".")
+    return text.replace(",", ".").replace(":", ".").replace(";", ".").replace('"', "").replace("'", "")
 
 
 def reduzieren(text):

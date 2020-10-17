@@ -92,12 +92,7 @@ export default class Start extends React.Component {
             </Grid.Column>
             <Grid.Column>
               <Form>
-                <div
-                  readOnly
-                  placeholder="Hier wird der Text mit Hervorhebungen erscheinen"
-                  className="AppTextbox"
-                  value={this.state.outputText}
-                >
+                <div className="AppTextbox">
                   <p id="textOutput">{this.markedText()}</p>
                 </div>
               </Form>

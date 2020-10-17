@@ -44,12 +44,11 @@ export default class App extends React.Component {
         <Container style={{ width: "70%" }}>
           <BrowserRouter basename={"/text"}>
             <Menu>
-              <Menu.Item>
-                <a href="https://braguinski.de" style={{ color: "black" }}>
-                  braguinski.de
-                </a>
-              </Menu.Item>
+              <Menu.Item href="https://braguinski.de">braguinski.de</Menu.Item>
               {this.myMenuItem()}
+              <Menu.Item href="https://github.com/leonardoInf/nlpMarkierung">
+                Quelltext
+              </Menu.Item>
             </Menu>
             <Switch>
               <Route exact path="/">
